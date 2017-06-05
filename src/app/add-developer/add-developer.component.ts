@@ -1,3 +1,5 @@
+import { DeveloperCollection } from './../developer/developer-collection';
+import { Developer } from './../developer/developer';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDeveloper implements OnInit {
 
-  constructor() { }
+  developer = new Developer();
+  errorMessage: string;
+  successMessage: string;
+  submitted = false;
+
+  technologies: string[] = [
+    'JavaScript',
+    'C',
+    'C#',
+    'Clojure'
+    ];
+    
+  constructor(private developers: DeveloperCollection) {
+
+  }
+
+  addDeveloper(){
+
+  }
 
   ngOnInit() {
   }

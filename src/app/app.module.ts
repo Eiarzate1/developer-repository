@@ -1,3 +1,5 @@
+import { ControlErrors } from './add-developer/control-errors';
+import { EmailValidator } from './add-developer/email-validator';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -33,7 +35,9 @@ const routeModule = RouterModule.forRoot([
   declarations: [
     AppComponent,
     Home,
-    AddDeveloper
+    AddDeveloper,
+    EmailValidator,
+    ControlErrors
   ],
   imports: [
     BrowserModule,
