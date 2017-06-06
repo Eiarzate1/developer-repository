@@ -1,3 +1,4 @@
+import { DeveloperCollection } from './../developer/developer-collection';
 import { Component, OnInit, NgModule } from '@angular/core';
 
 @Component({
@@ -7,7 +8,11 @@ import { Component, OnInit, NgModule } from '@angular/core';
 })
 export class Home implements OnInit {
 
-  constructor() { }
+  constructor(private developers: DeveloperCollection) { }
+
+  getDevelopers(){
+    return this.developers.getAll();
+  }
 
   ngOnInit() {
   }

@@ -1,7 +1,7 @@
 import { Developer } from './developer';
 
 export class DeveloperCollection{
-    private developers: Developer[];
+    private developers: Developer[] = [];
     
     getUsersByGitHubHandle(username: string){
         return this.developers.filter(u => u.githubHandle === username).pop();

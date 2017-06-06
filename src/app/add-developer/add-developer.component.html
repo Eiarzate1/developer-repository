@@ -24,12 +24,20 @@
            for="technologyInput">Technology</label>
     <div>
       <select class="form-control" name="technology" required [(ngModel)]="developer.technology">
-        <option *ngFor="let tech of technologies" [value]="technology">{{tech}}</option>
+        <option *ngFor="let technology of technologies" [value]="technology">{{technology}}</option>
       </select>
     </div>
   </div>
 
-  <button class="btn btn-default" type="submit">Add</button>
+  <div class="form-group">
+    <label class="control-label"
+           for="pupularCheckbox">Popular</label>
+    <div>
+      <input class="checkbox-inline" id="pupularCheckbox" type="checkbox" name="realName" [(ngModel)]="developer.popular">
+    </div>
+  </div>
+
+  <button class="btn btn-default" type="submit" [disabled]="!f.form.valid">Add</button>
 </form>
 
 

@@ -18,15 +18,22 @@ export class AddDeveloper implements OnInit {
     'JavaScript',
     'C',
     'C#',
-    'Clojure'
+    'Clojure',
+    'Python'
     ];
-    
+
   constructor(private developers: DeveloperCollection) {
 
   }
 
   addDeveloper(){
-
+    this.developer.id = this.developers.getAll().length + 1;
+    if(!this.developer.popular){
+      this.developer.popular = false;
+    }
+    this.developers.addDeveloper(this.developer);
+    this.successMessage = `Developer ${this.developer.realName} was successfully added`;
+    this.submitted = true;
   }
 
   ngOnInit() {
